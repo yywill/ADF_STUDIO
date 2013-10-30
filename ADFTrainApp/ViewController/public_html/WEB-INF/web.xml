@@ -21,11 +21,6 @@
     <param-value>false</param-value>
   </context-param>
   <context-param>
-    <description>Security precaution to prevent clickjacking: bust frames if the ancestor window domain(protocol, host, and port) and the frame domain are different. Another options for this parameter are always and never.</description>
-    <param-name>oracle.adf.view.rich.security.FRAME_BUSTING</param-name>
-    <param-value>differentDomain</param-value>
-  </context-param>
-  <context-param>
     <param-name>javax.faces.FACELETS_VIEW_MAPPINGS</param-name>
     <param-value>*.jsf;*.xhtml</param-value>
   </context-param>
@@ -44,6 +39,11 @@
   <context-param>
     <param-name>javax.faces.FACELETS_RESOURCE_RESOLVER</param-name>
     <param-value>oracle.adfinternal.view.faces.facelets.rich.AdfFaceletsResourceResolver</param-value>
+  </context-param>
+  <context-param>
+    <description>Security precaution to prevent clickjacking: bust frames if the ancestor window domain(protocol, host, and port) and the frame domain are different. Another options for this parameter are always and never.</description>
+    <param-name>org.apache.myfaces.trinidad.security.FRAME_BUSTING</param-name>
+    <param-value>differentOrigin</param-value>
   </context-param>
   <filter>
     <filter-name>JpsFilter</filter-name>
