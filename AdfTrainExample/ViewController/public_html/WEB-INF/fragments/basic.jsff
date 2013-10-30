@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelStretchLayout topHeight="94px" id="psl1">
+    <f:facet name="top">
+      <af:panelGroupLayout layout="scroll"
+                           xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                           id="pgl1">
+        <af:outputText value="Enter Employee Basic Info" id="ot1"
+                       inlineStyle="font-size:medium; color:Maroon; font-weight:bolder;"/>
+        <af:train value="#{controllerContext.currentViewPort.taskFlowContext.trainModel}"
+                  id="t1"/>
+        <af:trainButtonBar value="#{controllerContext.currentViewPort.taskFlowContext.trainModel}"
+                           id="tbb1"/>
+      </af:panelGroupLayout>
+    </f:facet>
+    <f:facet name="center">
+      <af:panelFormLayout id="pfl1">
+        <af:inputText value="#{bindings.EmployeeId.inputValue}"
+                      label="#{bindings.EmployeeId.hints.label}"
+                      required="#{bindings.EmployeeId.hints.mandatory}"
+                      columns="#{bindings.EmployeeId.hints.displayWidth}"
+                      maximumLength="#{bindings.EmployeeId.hints.precision}"
+                      shortDesc="#{bindings.EmployeeId.hints.tooltip}" id="it3">
+          <f:validator binding="#{bindings.EmployeeId.validator}"/>
+          <af:convertNumber groupingUsed="false"
+                            pattern="#{bindings.EmployeeId.format}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.FirstName.inputValue}"
+                      label="#{bindings.FirstName.hints.label}"
+                      required="#{bindings.FirstName.hints.mandatory}"
+                      columns="#{bindings.FirstName.hints.displayWidth}"
+                      maximumLength="#{bindings.FirstName.hints.precision}"
+                      shortDesc="#{bindings.FirstName.hints.tooltip}" id="it2">
+          <f:validator binding="#{bindings.FirstName.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.LastName.inputValue}"
+                      label="#{bindings.LastName.hints.label}"
+                      required="#{bindings.LastName.hints.mandatory}"
+                      columns="#{bindings.LastName.hints.displayWidth}"
+                      maximumLength="#{bindings.LastName.hints.precision}"
+                      shortDesc="#{bindings.LastName.hints.tooltip}" id="it1">
+          <f:validator binding="#{bindings.LastName.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.Email.inputValue}"
+                      label="#{bindings.Email.hints.label}"
+                      required="#{bindings.Email.hints.mandatory}"
+                      columns="#{bindings.Email.hints.displayWidth}"
+                      maximumLength="#{bindings.Email.hints.precision}"
+                      shortDesc="#{bindings.Email.hints.tooltip}" id="it6">
+          <f:validator binding="#{bindings.Email.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.PhoneNumber.inputValue}"
+                      label="#{bindings.PhoneNumber.hints.label}"
+                      required="#{bindings.PhoneNumber.hints.mandatory}"
+                      columns="#{bindings.PhoneNumber.hints.displayWidth}"
+                      maximumLength="#{bindings.PhoneNumber.hints.precision}"
+                      shortDesc="#{bindings.PhoneNumber.hints.tooltip}"
+                      id="it5">
+          <f:validator binding="#{bindings.PhoneNumber.validator}"/>
+        </af:inputText>
+        <af:inputComboboxListOfValues id="departmentIdId"
+                                      popupTitle="Search and Select: #{bindings.DepartmentId.hints.label}"
+                                      value="#{bindings.DepartmentId.inputValue}"
+                                      label="#{bindings.DepartmentId.hints.label}"
+                                      model="#{bindings.DepartmentId.listOfValuesModel}"
+                                      required="#{bindings.DepartmentId.hints.mandatory}"
+                                      columns="#{bindings.DepartmentId.hints.displayWidth}"
+                                      shortDesc="#{bindings.DepartmentId.hints.tooltip}">
+          <f:validator binding="#{bindings.DepartmentId.validator}"/>
+          <af:convertNumber groupingUsed="false"
+                            pattern="#{bindings.DepartmentId.format}"/>
+        </af:inputComboboxListOfValues>
+        <f:facet name="footer">
+          <af:commandButton text="Add Department" id="cb1"
+                            action="newDepartment" immediate="true"/>
+        </f:facet>
+      </af:panelFormLayout>
+      <!-- id="af_one_column_header_stretched"  -->
+    </f:facet>
+  </af:panelStretchLayout>
+</jsp:root>

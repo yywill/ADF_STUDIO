@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelStretchLayout id="psl1">
+    <f:facet name="center">
+      <af:panelFormLayout id="pfl1">
+        <af:inputText value="#{bindings.DepartmentId.inputValue}"
+                      label="#{bindings.DepartmentId.hints.label}"
+                      required="#{bindings.DepartmentId.hints.mandatory}"
+                      columns="#{bindings.DepartmentId.hints.displayWidth}"
+                      maximumLength="#{bindings.DepartmentId.hints.precision}"
+                      shortDesc="#{bindings.DepartmentId.hints.tooltip}"
+                      id="it3">
+          <f:validator binding="#{bindings.DepartmentId.validator}"/>
+          <af:convertNumber groupingUsed="false"
+                            pattern="#{bindings.DepartmentId.format}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.DepartmentName.inputValue}"
+                      label="#{bindings.DepartmentName.hints.label}"
+                      required="#{bindings.DepartmentName.hints.mandatory}"
+                      columns="#{bindings.DepartmentName.hints.displayWidth}"
+                      maximumLength="#{bindings.DepartmentName.hints.precision}"
+                      shortDesc="#{bindings.DepartmentName.hints.tooltip}"
+                      id="it1">
+          <f:validator binding="#{bindings.DepartmentName.validator}"/>
+        </af:inputText>
+        <f:facet name="footer">
+            <af:panelGroupLayout id="pgl1">
+              <af:commandButton text="OK" id="cb1" action="ok"/>
+              <af:commandButton text="Cancel" id="cb2" action="cancel"
+                                immediate="true">
+              <af:resetActionListener/>
+            </af:commandButton>
+            </af:panelGroupLayout>
+        </f:facet>
+      </af:panelFormLayout>
+      <!-- id="af_one_column_stretched"   -->
+    </f:facet>
+  </af:panelStretchLayout>
+</jsp:root>

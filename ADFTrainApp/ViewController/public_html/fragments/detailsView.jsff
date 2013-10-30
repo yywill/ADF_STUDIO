@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <af:pageTemplate viewId="/templates/fragmentTemplate.jsf" id="pt1">
+        <f:facet name="mainArea">
+            <af:panelHeader text="Details" id="ph1">
+                <f:facet name="context"/>
+                <f:facet name="menuBar"/>
+                <f:facet name="toolbar"/>
+                <f:facet name="legend"/>
+                <f:facet name="info"/>
+                <af:panelFormLayout id="pfl1">
+                    <f:facet name="footer"/>
+                    <af:inputText label="Account" id="it1"/>
+                    <af:inputDate label="Application Date" id="id1"/>
+                    <af:inputDate label="Routing Date" id="id2"/>
+                    <af:inputDate label="Confirmation Date" id="id3"/>
+                </af:panelFormLayout>
+            </af:panelHeader>
+        </f:facet>
+    </af:pageTemplate>
+</ui:composition>

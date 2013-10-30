@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <af:pageTemplate viewId="/templates/fragmentTemplate.jsf" id="pt1">
+        <f:facet name="mainArea">
+            <af:panelHeader text="Payment" id="ph1">
+                <f:facet name="context"/>
+                <f:facet name="menuBar"/>
+                <f:facet name="toolbar"/>
+                <f:facet name="legend"/>
+                <f:facet name="info"/>
+                <af:panelFormLayout id="pfl1">
+                    <f:facet name="footer"/>
+                    <af:inputText label="Credit Card Number" id="it1"/>
+                    <af:inputText label="Credit Card Type" id="it2"/>
+                    <af:inputText label="Security Code" id="it3"/>
+                </af:panelFormLayout>
+            </af:panelHeader>
+        </f:facet>
+    </af:pageTemplate>
+</ui:composition>

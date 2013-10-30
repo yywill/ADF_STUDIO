@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="welcome">
+    <default-activity id="__1">welcomepage</default-activity>
+    <view id="welcomepage">
+      <page>/WEB-INF/fragments/welcome.jsff</page>
+    </view>
+    <task-flow-call id="emp">
+      <task-flow-reference>
+        <document>/WEB-INF/emp.xml</document>
+        <id>emp</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <control-flow-rule id="__2">
+      <from-activity-id id="__3">welcomepage</from-activity-id>
+      <control-flow-case id="__5">
+        <from-outcome id="__6">add</from-outcome>
+        <to-activity-id id="__4">emp</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__8">
+      <from-activity-id id="__7">*</from-activity-id>
+      <control-flow-case id="__9">
+        <from-outcome id="__11">goHome</from-outcome>
+        <to-activity-id id="__10">welcomepage</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

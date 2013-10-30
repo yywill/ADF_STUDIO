@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.56.60"
+                id="add_departments_add_departments_CreateInsertPageDef"
+                Package="org.baigsorcl.view.pageDefs" SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="Departments" RangeSize="25"
+              DataControl="HrAppModuleDataControl" id="DepartmentsIterator"/>
+  </executables>
+  <bindings>
+    <action IterBinding="DepartmentsIterator" id="CreateInsert"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

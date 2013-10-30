@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.56.60" id="emp_emp_CreateInsertPageDef"
+                Package="org.baigsorcl.view.pageDefs" SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="Employees" RangeSize="25"
+              DataControl="HrAppModuleDataControl" id="EmployeesIterator"/>
+  </executables>
+  <bindings>
+    <action IterBinding="EmployeesIterator" id="CreateInsert"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

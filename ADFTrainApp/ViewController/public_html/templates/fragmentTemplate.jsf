@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<af:pageTemplateDef xmlns:af="http://xmlns.oracle.com/adf/faces/rich" var="attrs" definition="private"
+                    xmlns:afc="http://xmlns.oracle.com/adf/faces/rich/component" xmlns:f="http://java.sun.com/jsf/core">
+    <af:decorativeBox id="pt_db1" dimensionsFrom="children" topHeight="150px">
+        <f:facet name="center">
+            <af:panelGroupLayout id="pt_pgl2" layout="vertical" halign="center">
+                <af:panelStretchLayout id="pt_psl1">
+                    <f:facet name="bottom"/>
+                    <f:facet name="center">
+                        <af:facetRef facetName="mainArea"/>
+                    </f:facet>
+                    <f:facet name="start"/>
+                    <f:facet name="end"/>
+                    <f:facet name="top"/>
+                </af:panelStretchLayout>
+            </af:panelGroupLayout>
+        </f:facet>
+        <f:facet name="top">
+            <af:panelGroupLayout id="pt_pgl1" layout="vertical" halign="center">
+                <af:navigationPane hint="buttons"
+                                   value="#{controllerContext.currentViewPort.taskFlowContext.trainModel}"
+                                   var="trainNode" id="np1">
+                    <f:facet name="nodeStamp">
+                        <af:commandNavigationItem text="#{trainNode.textAndAccessKey}" id="cni1"
+                                                  visited="#{trainNode.visited}" disabled="#{trainNode.disabled}"
+                                                  action="#{trainNode.action}" selected="#{trainStopBean.currentTab}"
+                                                  icon="#{trainStopBean.trainStopImage}"/>
+                    </f:facet>
+                </af:navigationPane>
+            </af:panelGroupLayout>
+        </f:facet>
+    </af:decorativeBox>
+    <af:xmlContent>
+        <afc:component>
+            <afc:display-name>fragmentTemplate</afc:display-name>
+            <afc:facet>
+                <afc:facet-name>mainArea</afc:facet-name>
+            </afc:facet>
+        </afc:component>
+    </af:xmlContent>
+</af:pageTemplateDef>

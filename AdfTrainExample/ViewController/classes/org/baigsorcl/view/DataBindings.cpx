@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application"
+             version="11.1.1.56.60" id="DataBindings" SeparateXMLFiles="false"
+             Package="org.baigsorcl.view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/WEB-INF/emp.xml#emp@CreateInsert"
+          usageId="org_baigsorcl_view_emp_emp_CreateInsertPageDef"/>
+    <page path="/WEB-INF/add-departments.xml#add-departments@CreateInsert"
+          usageId="org_baigsorcl_view_add_departments_add_departments_CreateInsertPageDef"/>
+    <page path="/WEB-INF/fragments/welcome.jsff" usageId="org_baigsorcl_view_welcomePageDef"/>
+    <page path="/WEB-INF/fragments/basic.jsff" usageId="org_baigsorcl_view_basicPageDef"/>
+    <page path="/WEB-INF/fragments/salary.jsff" usageId="org_baigsorcl_view_salaryPageDef"/>
+    <page path="/WEB-INF/fragments/departments.jsff"
+          usageId="org_baigsorcl_view_departmentsPageDef"/>
+    <page path="/Home.jspx" usageId="org_baigsorcl_view_HomePageDef"/>
+    <page path="/WEB-INF/fragments/summary.jsff" usageId="org_baigsorcl_view_summaryPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="org_baigsorcl_view_emp_emp_CreateInsertPageDef"
+          path="org.baigsorcl.view.pageDefs.emp_emp_CreateInsertPageDef"/>
+    <page id="org_baigsorcl_view_add_departments_add_departments_CreateInsertPageDef"
+          path="org.baigsorcl.view.pageDefs.add_departments_add_departments_CreateInsertPageDef"/>
+    <page id="org_baigsorcl_view_welcomePageDef"
+          path="org.baigsorcl.view.pageDefs.welcomePageDef"/>
+    <page id="org_baigsorcl_view_basicPageDef"
+          path="org.baigsorcl.view.pageDefs.basicPageDef"/>
+    <page id="org_baigsorcl_view_salaryPageDef"
+          path="org.baigsorcl.view.pageDefs.salaryPageDef"/>
+    <page id="org_baigsorcl_view_departmentsPageDef"
+          path="org.baigsorcl.view.pageDefs.departmentsPageDef"/>
+    <page id="org_baigsorcl_view_HomePageDef"
+          path="org.baigsorcl.view.pageDefs.HomePageDef"/>
+    <page id="org_baigsorcl_view_summaryPageDef"
+          path="org.baigsorcl.view.pageDefs.summaryPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="HrAppModuleDataControl" Package="org.baigsorcl.model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
+                     SupportsTransactions="true" SupportsFindMode="true"
+                     SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true"
+                     Configuration="HrAppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="emp">
+    <default-activity id="__1">CreateInsert</default-activity>
+    <transaction id="__10">
+      <new-transaction/>
+    </transaction>
+    <data-control-scope id="__9">
+      <shared/>
+    </data-control-scope>
+    <view id="basic">
+      <display-name id="__41">Basic Info</display-name>
+      <page>/WEB-INF/fragments/basic.jsff</page>
+      <train-stop id="__7"/>
+    </view>
+    <task-flow-call id="add-departments">
+      <task-flow-reference>
+        <document id="__6">/WEB-INF/add-departments.xml</document>
+        <id id="__5">add-departments</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <view id="salary">
+      <display-name id="__42">Salary Info</display-name>
+      <page>/WEB-INF/fragments/salary.jsff</page>
+      <train-stop id="__3"/>
+    </view>
+    <task-flow-return id="ok">
+      <outcome id="__8">
+        <name>ok</name>
+        <commit/>
+      </outcome>
+    </task-flow-return>
+    <method-call id="CreateInsert">
+      <method>#{bindings.CreateInsert.execute}</method>
+      <outcome id="__21">
+        <fixed-outcome>CreateInsert</fixed-outcome>
+      </outcome>
+    </method-call>
+    <view id="summary">
+      <display-name id="__43">Summary</display-name>
+      <page>/WEB-INF/fragments/summary.jsff</page>
+      <train-stop id="__28"/>
+    </view>
+    <task-flow-return id="cancel">
+      <outcome id="__11">
+        <name>cancel</name>
+        <rollback/>
+      </outcome>
+    </task-flow-return>
+    <train/>
+    <control-flow-rule id="__22">
+      <from-activity-id id="__23">CreateInsert</from-activity-id>
+      <control-flow-case id="__25">
+        <from-outcome id="__24">CreateInsert</from-outcome>
+        <to-activity-id id="__26">basic</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__2">
+      <from-activity-id id="__4">basic</from-activity-id>
+      <control-flow-case id="__20">
+        <from-outcome id="__27">newDepartment</from-outcome>
+        <to-activity-id id="__14">add-departments</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__29">
+      <from-activity-id id="__30">summary</from-activity-id>
+      <control-flow-case id="__31">
+        <from-outcome id="__32">ok</from-outcome>
+        <to-activity-id id="__33">ok</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__12">
+        <from-outcome id="__34">cancel</from-outcome>
+        <to-activity-id id="__13">cancel</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

@@ -1,0 +1,12 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="org.baigsorcl.model.HrAppModule">
+      <AppModuleConfig name="HrAppModuleLocal" ApplicationName="org.baigsorcl.model.HrAppModule" DeployPlatform="LOCAL" JDBCName="HrXE" jbo.project="org.baigsorcl.model.Model">
+         <Security AppModuleJndiName="org.baigsorcl.model.HrAppModule"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="HrAppModuleShared" ApplicationName="org.baigsorcl.model.HrAppModule" DeployPlatform="LOCAL" JDBCName="HrXE" jbo.project="org.baigsorcl.model.Model">
+         <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+         <Security AppModuleJndiName="org.baigsorcl.model.HrAppModule"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>
